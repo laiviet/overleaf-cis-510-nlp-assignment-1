@@ -1,0 +1,121 @@
+\section{Word2vec}
+
+Top 10 similar words using brown corpus:
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Word & Similarity score \\
+        \hline
+        % wider & 0.9519422054290771 \\
+        % price & 0.9505652189254761 \\
+        % confused & 0.9484642744064331 \\
+        % advance & 0.9477910399436951 \\
+        % alert & 0.9450501799583435 \\
+        % marriage & 0.9448837637901306 \\
+        % limit & 0.9447651505470276 \\
+        % condition & 0.9446669816970825 \\
+        % pleasure & 0.9432739615440369 \\
+        % authority & 0.9431186318397522 \\
+        propriety & 0.7213 \\
+        capture & 0.7183 \\
+        endeavor & 0.7165 \\
+        emphasize & 0.7097 \\
+        peculiar & 0.7052 \\
+        conscience & 0.7051 \\
+        dedication & 0.7049 \\
+        grave & 0.7031 \\
+        indifference & 0.7009 \\
+        theologian & 0.6950 \\
+        \hline
+    \end{tabular}
+    \caption{Top 10 most similar word to \textbf{slave} using word2vec model trained on Brown corpus.}
+    \label{tab:slave_brown}
+\end{table}
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+        Word & Similarity score \\
+        \hline
+        % decomposition & 0.9632197618484497 \\
+        % mentioning & 0.9476870298385620\\ 
+        % New-Waver & 0.9469611644744873\\
+        % rattle & 0.9459758996963501\\
+        % turtle & 0.9435310959815979\\
+        % altering & 0.9410578608512878\\
+        % Marsh & 0.9406595230102539\\
+        % Friends & 0.9401799440383911\\
+        % Royal & 0.9391235709190369\\
+        % wheat & 0.9377139210700989\\
+        cerebral & 0.8383 \\
+        cult & 0.8306 \\
+        Photographer & 0.8302 \\
+        ethicist & 0.8297 \\
+        makeup & 0.8293 \\
+        gunk & 0.8246 \\
+        Itch & 0.8183 \\
+        crime & 0.8175 \\
+        revolt & 0.8166 \\
+        defeat & 0.8165 \\
+        \hline
+    \end{tabular}
+    \caption{Top 10 most similar word to \textbf{rebellion} using word2vec model trained on Brown corpus.}
+    \label{tab:rebellion_brown}
+\end{table}
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+        Word & Similarity score \\
+        \hline
+        slaves & 0.8381 \\
+        slavery & 0.7260 \\
+        enslaved & 0.7017\\
+        enslaved\_Africans & 0.6436 \\
+        slaver & 0.6238 \\
+        slavers & 0.5991\\
+        Abraham\_Lincoln\_emancipation & 0.5778\\
+        slave\_masters & 0.5764 \\
+        abhorred\_slavery & 0.5687 \\
+        slaveholders & 0.5585 \\
+        \hline
+    \end{tabular}
+    \caption{Top 10 most similar word to \textbf{slave} using Google pretrained word2vec model.}
+    \label{tab:slave_google}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    Word & Similarity score \\
+        \hline
+        revolt & 0.8357 \\
+        insurrection & 0.7861 \\
+        rebellions & 0.7244 \\
+        uprising & 0.6938 \\
+        revolts & 0.6581 \\
+        mutiny & 0.6445 \\
+        uprisings & 0.6043 \\
+        rebellious & 0.5893 \\
+        rebelled & 0.5875 \\
+        insurrections & 0.5765 \\
+        \hline
+    \end{tabular}
+    \caption{Top 10 most similar word to \textbf{rebellion} using Google pretrained word2vec model.}
+    \label{tab:rebellion_google}
+\end{table}
+
+
+\hspace{1cm} As can be seen from table \ref{tab:slave_brown} and \ref{tab:rebellion_brown}, the words generated from Brown corpus do not share a common meaning or a common topic. They are pretty random, each word shows a different topic. There is no syntactic relation between those words. The differences of similarity scores between words are minor (less than 0.03).
+
+
+\hspace{1cm} Whereas, the words generated from the Google's pretrained word2vec model shares a common topic with the others and with the query word. Some of them are different syntactic forms (e.g. singular, plural, pass, adjective, noun) of a single root word. For instance, \textit{rebellions, rebellious, rebelled and rebellion} are all rooted from the word \textit{rebel}. The different of similarity score of words in top 10 are significant. The score margin is up to 0.18 between \textit{slaves} and \textit{slaveholders}.
+

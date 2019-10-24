@@ -1,0 +1,79 @@
+\section{Task 2}
+\subsection{Problem 4.1 (page 81)}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l|r|r}
+    & pos & neg \\
+    \hline
+         I & 0.09 &0.16 \\
+        always &0.07& 0.06 \\
+        like& 0.29 &0.06 \\
+        foreign &0.04 & 0.15 \\
+        films & 0.08 & 0.11 \\
+    \end{tabular}
+    \caption{Probability table.}
+    \label{tab:my_label}
+    
+\end{table}
+
+Denote $X=\text{"I always like foreign files"}$.
+
+Since the probabilities of classes are equal, $P(\text{pos}) =P(\text{neg}) =0.5 $.
+
+\begin{equation*}
+\begin{aligned}
+P(y|X) &= \frac{P(\text{X}|y)P(y)}{P(X)}\\
+&= \frac{P(\text{I}|y) P(\text{always}|y) P(\text{ like}|y) P(\text{ foreign}|y) P(\text{ films}|y)P(y)}{P(X)}
+\end{aligned}
+\end{equation*}
+
+Therefore
+
+
+\begin{equation*}
+\begin{aligned}
+P(\text{pos}| X) &= \frac{0.09 \times 0.07 \times 0.29 \times 0.04 \times 0.08\times 0.5}{P(X)} \\
+&= \frac{0.0000058464}{P(X)}
+\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\begin{aligned}
+P(\text{neg}| X) &= \frac{0.16 \times 0.06 \times 0.06 \times 0.15 \times 0.11\times 0.5}{P(X)} \\
+&= \frac{0.000009504}{P(X)}
+\end{aligned}
+\end{equation*}
+
+Since $P(\text{neg}| X) > P(\text{pos}| X)$, the final result of Naive Bayes is \textbf{negative}.
+
+
+\subsection{Problem 4.2 (page 81)}
+
+Denote $c$ as comedy and $a$ as action.
+$$P(c)=\frac{2}{5}\;\;\;\;\;\; P(a)=\frac{3}{5}\\$$
+
+\begin{equation*}
+\begin{aligned}
+P(\text{fast}|c)&=\frac{1+1}{9+7} = \frac{2}{16}\\
+P(\text{couple}|c)&=\frac{2+1}{9+7} = \frac{3}{16}\\
+P(\text{shoot}|c)&=\frac{0+1}{9+7} = \frac{1}{16}\\
+P(\text{fly}|c)&=\frac{1+1}{9+7} = \frac{2}{16}\\
+\\
+P(\text{fast}|a)&=\frac{2+1}{11+17} = \frac{3}{18}\\
+P(\text{couple}|a)&=\frac{0+1}{11+17} = \frac{1}{18}\\
+P(\text{shoot}|a)&=\frac{4+1}{11+17} = \frac{5}{18}\\
+P(\text{fly}|a)&=\frac{1+1}{11+17} = \frac{2}{18}\\
+\end{aligned}
+\end{equation*}
+
+
+$$P(c|\text{fast, couple, shot, fly}) = \frac{2}{5}\frac{2}{16}\frac{3}{16}\frac{1}{16}\frac{2}{16}=has 0.00007324218$$
+% 0.00016479492
+
+$$P(a|\text{fast, couple, shot, fly}) = \frac{3}{5}\frac{3}{18}\frac{1}{18}\frac{5}{18}\frac{2}{18}=0.00017146776$$
+
+Since $P(a|\text{fast, couple, shot, fly}) > P(c|\text{fast, couple, shot, fly})$, the class is \textbf{action}.
+
+
+
+
